@@ -93,6 +93,9 @@ window.onload = function() {
       parallax:true
       // spaceBetween: 30
   });
+  if(document.querySelector('.select-wrapper input.select-dropdown') != undefined) {
+    document.querySelector('.select-wrapper input.select-dropdown').value = "";
+  }
   var swiper2 = new Swiper('.partners-slider', {
       loop:true,
       nextButton: '.our-partners .swiper-button-next',
@@ -252,6 +255,12 @@ window.onload = function() {
     //         $('.sub-catalog-cont').removeClass('visible');
     //         $('.sub-catalog-cont[data-menu="'+ catalogId +'"]').addClass('visible');
     // });
+    if(document.querySelector('.to-buy') !=undefined) {
+      document.querySelector('.product-details .to-buy').addEventListener('click',function(e){
+        e.preventDefault();
+        scrollTo(document.body,document.getElementById('buy-product').offsetTop, 1000)
+      },false);
+    } 
 }
 window.onresize = function() {
     if(document.querySelector('.catalog-body') != undefined) {
@@ -291,7 +300,7 @@ function catalogHeight () {
 }
 function catalogTab () {
       if (document.querySelector('.catalog-nav').clientHeight > 400) {
-          document.querySelector('.catalog-body').style.height =  document.querySelector('.catalog-nav').clientHeight + 'px';
+          document.querySelector('.catalog-body ').style.height =  document.querySelector('.catalog-nav').clientHeight + 'px';
       }else {
           document.querySelector('.catalog-body').style.height = '500px';
       }
@@ -337,6 +346,10 @@ $(document).ready(function() {
       "extensions": [
         "theme-dark"
      ],
+     "navbar" : [
+        "title",""
+
+     ],
      "navbars": [
       {
          "position": "bottom",
@@ -357,7 +370,7 @@ $(document).ready(function() {
             setTimeout(function(){
               _this.find('.sub-head-menu').addClass('visible');  
               catalogHeight();
-            },100);
+            },50);
         },
         function(){
             var _this =  $(this);
@@ -365,7 +378,7 @@ $(document).ready(function() {
             $('.overlay-menu').removeClass('visible');
             setTimeout(function(){
                 _this.find('.sub-head-menu').css('display','none');
-            },500);
+            },100);
         }
     );
     // hover menu
@@ -407,6 +420,9 @@ function validate(form){
     function mark (object, expression) {
         if (expression) {
             object.parent('div').addClass(error_class).removeClass(norma_class).find('.error_text').show();
+            if (email && (object.val().length > 0)) {
+              object.parent().attr('data-error','Некорректный email');
+            }
             e++;
         } else
             object.parent('div').addClass(norma_class).removeClass(error_class).find('.error_text').hide();

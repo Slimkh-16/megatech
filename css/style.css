@@ -1096,13 +1096,27 @@ b, strong {
 .catalog-body {
   padding: 0 !important;
   background: #fff;
-  overflow: hidden;
-  overflow-y: auto;
+  padding-bottom: 245px !important;
+  position: relative;
+}
+.catalog-body .tab-pane {
+  height: 100%;
+}
+.catalog-body .tab-pane img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 245px;
 }
 
 .tab-info {
   padding: 64px 60px 0;
   text-align: center;
+  max-height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .tab-list {
@@ -1322,7 +1336,8 @@ b, strong {
   text-align: center;
 }
 .our-project .tabs .tab a {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   color: #272727;
   opacity: 0.5;
   -moz-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -1358,6 +1373,10 @@ b, strong {
   height: 385px;
 }
 
+.ceys-page .our-tab-item {
+  margin-bottom: 30px;
+}
+
 .our-tab__img {
   height: 260px;
   background-repeat: none !important;
@@ -1366,6 +1385,10 @@ b, strong {
   -o-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   -webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.info {
+  padding-bottom: 25px;
 }
 
 .our-tab__info {
@@ -1396,6 +1419,8 @@ b, strong {
 .our-tab__info a {
   display: inline-block;
   vertical-align: middle;
+  max-height: 105px;
+  overflow: hidden;
   font-size: 22px;
   line-height: 27px;
   -moz-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -1527,6 +1552,35 @@ b, strong {
   padding-bottom: 85px;
 }
 
+#mm-blocker {
+  z-index: 555;
+  opacity: 0;
+  -moz-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  -o-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+@media screen and (max-width: 420px) {
+  #mm-blocker:after {
+    content: '\0058';
+    position: absolute;
+    font-family: 'Glyphter';
+    color: #fff;
+    font-size: 20px;
+    top: 10px;
+    left: 10px;
+    z-index: 54;
+  }
+
+  #mm-blocker {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+.mm-opening #mm-blocker {
+  opacity: 1;
+}
+
 .testi-item {
   display: inline-block;
   vertical-align: top;
@@ -1538,6 +1592,9 @@ b, strong {
   position: relative;
   padding: 67px 0 20px;
   text-align: left;
+}
+.testi-info p {
+  margin-bottom: 8px;
 }
 .testi-info:before {
   content: '\0054';
@@ -1922,10 +1979,10 @@ html.mm-opened .hamburger-inner::before {
   color: #c4c4c4;
 }
 .found-block__left .lg {
+  display: block;
   font-size: 138px;
-  line-height: 50px;
+  line-height: 140px;
   color: #0098cf;
-  font-family: 'Arial',sans-serif;
 }
 .found-block__left .lg .gr {
   color: #c4c4c4;
@@ -2011,6 +2068,10 @@ html.mm-opened .hamburger-inner::before {
   width: 750px;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.col {
+  max-width: 100%;
 }
 
 .product-list {
@@ -2405,14 +2466,6 @@ html.mm-opened .hamburger-inner::before {
 .contact-page {
   position: relative;
 }
-.contact-page .breadcrumbs {
-  position: absolute;
-  z-index: 15;
-  top: 0;
-  right: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.8);
-}
 .contact-page .contact-map {
   margin: 0;
 }
@@ -2421,7 +2474,7 @@ html.mm-opened .hamburger-inner::before {
   margin-top: -175px;
 }
 .contact-page #map {
-  height: 640px;
+  height: 600px;
 }
 
 .write-us {
@@ -2780,7 +2833,7 @@ html.mm-opened .hamburger-inner::before {
 .feed-news {
   width: 635px;
   max-width: 100%;
-  margin-top: 5px;
+  margin-top: 9px;
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -2902,6 +2955,8 @@ html.mm-opened .hamburger-inner::before {
 
 .about-banner {
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 .about-banner img {
   width: 100%;
@@ -3064,6 +3119,9 @@ html.mm-opened .hamburger-inner::before {
   padding: 0 15px;
   text-align: center;
 }
+.setificate-item img {
+  margin: 0 auto;
+}
 .setificate-item span {
   display: block;
   margin-top: 15px;
@@ -3125,6 +3183,14 @@ html.mm-opened .hamburger-inner::before {
   bottom: 0;
   left: 0;
   margin: auto;
+}
+
+.product-specification {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.product-specification table {
+  min-width: 600px;
 }
 
 .product-img-list {
@@ -3596,6 +3662,27 @@ html.mm-opened .hamburger-inner::before {
   }
 }
 @media screen and (max-width: 1300px) {
+  .service-banner .breadcrumbs {
+    position: static;
+  }
+
+  .service-banner .breadcrumbs ul li a,
+  .service-banner .breadcrumbs ul li a:hover, .service-banner .breadcrumbs ul li span {
+    color: #272727;
+  }
+
+  .foot-nav li {
+    margin-left: 10px;
+  }
+
+  .filter-butt {
+    font-size: 12px;
+  }
+
+  .blue-form .btn {
+    padding: 0 25px;
+  }
+
   .collaps-gen [class*='icon-'] {
     margin-right: 15px;
   }
@@ -3686,7 +3773,22 @@ html.mm-opened .hamburger-inner::before {
   max-height: none;
 }
 
+@media screen and (max-width: 1100px) {
+  .blue-form .btn {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 1023px) {
+  .feed {
+    text-align: center;
+  }
+  .feed .align-left {
+    text-align: center;
+  }
+  .feed .align-righ {
+    text-align: center;
+  }
+
   .modal-content {
     padding: 40px 30px !important;
   }
@@ -3880,6 +3982,27 @@ html.mm-opened .hamburger-inner::before {
   }
 }
 @media screen and (max-width: 767px) {
+  .tab-info {
+    max-height: 500px;
+  }
+
+  .found-section {
+    padding: 30px 0;
+  }
+
+  .found-block__right {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .product-specification table {
+    min-width: 450px;
+  }
+
+  .footer .col {
+    width: 100% !important;
+  }
+
   .feed-news input {
     padding-right: 105px;
   }
@@ -3909,13 +4032,14 @@ html.mm-opened .hamburger-inner::before {
     height: 300px;
   }
 
-  .contact-page .breadcrumbs {
-    position: static;
-    background: none;
+  .contact-page .contact-box {
+    margin-top: -15px;
+    font-size: 14px;
   }
 
-  .contact-page .contact-box {
-    margin-top: -50px;
+  .contact-box ul li span {
+    width: 100% !important;
+    padding: 0 !important;
   }
 
   .blue-form-field {
@@ -3967,9 +4091,9 @@ html.mm-opened .hamburger-inner::before {
   }
 
   .our-project .tabs .tab {
-    padding: 0 15px;
-    display: inline-block;
-    width: auto;
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
   }
 
   .ceys-page.our-project .tabs .tab {
@@ -4042,6 +4166,27 @@ html.mm-opened .hamburger-inner::before {
   }
 }
 @media screen and (max-width: 599px) {
+  .contact-box {
+    position: static;
+    width: 100%;
+  }
+
+  .contact-map {
+    margin-top: 0;
+  }
+
+  #map {
+    height: 250px;
+  }
+
+  .above-footer {
+    height: 250px;
+  }
+
+  .footer {
+    margin-top: -250px;
+  }
+
   .service-accordion {
     padding-bottom: 30px;
   }
@@ -4064,15 +4209,6 @@ html.mm-opened .hamburger-inner::before {
   .service-it, .result-it {
     width: 100%;
     max-width: 100%;
-  }
-
-  .service-banner .breadcrumbs {
-    position: static;
-  }
-
-  .service-banner .breadcrumbs ul li a,
-  .service-banner .breadcrumbs ul li a:hover, .service-banner .breadcrumbs ul li span {
-    color: #272727;
   }
 
   .product-gen-img, .product-img-list {
@@ -4129,7 +4265,11 @@ html.mm-opened .hamburger-inner::before {
   }
 
   .logo.active {
-    width: 170px;
+    width: 150px;
+  }
+
+  .logo.active .hover-logo {
+    left: 16px;
   }
 
   .logo {
@@ -4163,7 +4303,7 @@ html.mm-opened .hamburger-inner::before {
   }
 
   .right-head-nav {
-    margin-right: 5px;
+    margin-right: 15px;
     margin-top: 15px;
   }
 

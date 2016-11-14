@@ -370,7 +370,7 @@
             <div class="product-details">
               <div class="product-head">Описание</div>
               <p>Компания предлагает Вам купить Коммутаторы CISCO SB, мы предлагаем коммутаторы CISCO SB по оптимальным ценам, обеспечивая бесплатную доставку, настройку и техническую поддержку. Мы предлагаем коммутаторы Cisco SB по оптимальным ценам, обеспечивая бесплатную доставку, настройку и техническую поддержку.</p>
-              <a href="#" class="waves-effect waves-light btn">Заказать товар</a>
+              <a href="#buy-product" class="to-buy waves-effect waves-light btn">Заказать товар</a>
             </div>
             <div class="product-specification">
               <div class="product-head">Product Specification</div>
@@ -436,7 +436,7 @@
           <div class="container">
               <p>Остались вопросы по назначению или работе нашей продукции? <br>
               Наши специалисты ответят на все Ваши вопросы!</p>
-            <a href="#" class="waves-effect waves-light btn">Задать вопрос</a>
+            <a href="#modal2" class="waves-effect waves-light btn modal-trigger">Задать вопрос</a>
           </div>
         </div>
       </div>
@@ -475,7 +475,7 @@
     </section>
     <!-- ceys -->
     <!-- blue section -->
-    <section class="section-blue">
+    <section id="buy-product" class="section-blue">
       <div class="container">
           <p>Оставить заявку на приобретение товара</p>
           <form action="#" class="js_validate blue-form">
@@ -493,6 +493,16 @@
                 <option value="" disabled selected>Choose option</option>
                 <option value="1">8.00</option>
                 <option value="2">15.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
+                <option value="3">20.00</option>
                 <option value="3">20.00</option>
               </select>
             </div>
@@ -534,6 +544,40 @@
       </div>
     </div>
   </footer>
+  <div id="modal2" class="modal">
+     <div class="modal-content">
+        <a href="#!" class=" modal-action modal-close"><span class="icon-ico-24"></span></a>
+        <div class="container">
+          <div class="modal-head">
+              <span class="larg">Остались вопросы?</span>
+              Оставьте нам заявку, наши специалисты проконсультируют Вас!
+          </div>
+          <div class="modal-body">
+            <form action="#" class="form-us js_validate">
+              <div class="row">
+                <div class="col s6 form-field" data-error="Заполните поле">
+                  <span>Имя</span>
+                  <input type="text" required="">
+                </div>
+                <div class="col s6 form-field" data-error="Заполните поле">
+                  <span>Телефон</span>
+                  <input type="tel" data-validate="phone" required="">
+                </div>
+                <div class="col s12 form-field" data-error="Заполните поле">
+                  <span>Email</span>
+                  <input type="email" data-validate="email" required="">
+                </div>
+                <div class="col s12 form-field" data-error="Заполните поле">
+                  <span>Сообщение</span>
+                  <textarea required="" class="materialize-textarea"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="waves-effect waves-light btn">отправить</button>
+            </form>
+          </div>
+        </div>
+     </div>
+   </div>
   <link rel="stylesheet" property="stylesheet" type="text/css" href="css/materialize.min.css">
   <link rel="stylesheet" property="stylesheet" type="text/css" href="css/Glyphter.css">
   <link rel="stylesheet" property="stylesheet" type="text/css" href="css/swiper.min.css">

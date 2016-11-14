@@ -752,15 +752,27 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 .catalog-body {
 	padding: 0 !important;
 	background:#fff;
-	overflow: hidden;
-	overflow-y: auto;
+	padding-bottom: 245px !important;
+	position: relative;
 	// .tab-pane {
 	// 	display: none;
 	// }
+	.tab-pane {height: 100%;}
+	.tab-pane img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: 245px;
+	}
 }
 .tab-info {
 	padding: 64px 60px 0;
 	text-align: center;
+	max-height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
 }
 .tab-list {
 	// display: inline-block;
@@ -945,7 +957,8 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 			float: none;
 			text-align: center;
 			a {
-				display: block;
+				display: inline-block;
+				vertical-align: middle;
 				color: $t;
 				opacity: 0.5;
 				@include anim;
@@ -979,12 +992,16 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 	height: 385px;
 	// background:#fff;
 }
+.ceys-page .our-tab-item {margin-bottom: 30px;}
 .our-tab__img {
 	height: 260px;
 	background-repeat: none !important;
 	background-position: 50% 50% !important;
 	// background-size: cover !important;
 	@include anim;
+}
+.info {
+	padding-bottom: 25px;
 }
 .our-tab__info {
 	background:#fff;
@@ -1006,6 +1023,8 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 	a {
 		display: inline-block;
 		vertical-align: middle;
+		max-height: 105px;
+		overflow: hidden;
 		font-size:22px;
 		line-height: 27px;
 		@include anim;
@@ -1110,6 +1129,28 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 	text-align: center;
 	padding-bottom: 85px;
 }
+#mm-blocker {
+	z-index: 555;
+	opacity: 0;
+	@include anim;
+}
+
+@media screen and (max-width: 420px) {
+	#mm-blocker:after {
+		content:'\0058';
+		position: absolute;
+		font-family: 'Glyphter';
+		color: #fff;
+		font-size: 20px;
+		top: 10px;
+		left: 10px;
+		z-index: 54;
+	}
+	#mm-blocker {
+		background:rgba(0,0,0,0.7);
+	}
+}
+.mm-opening #mm-blocker {opacity: 1;}
 .testi-item {
 	display: inline-block;
 	vertical-align: top;
@@ -1120,6 +1161,9 @@ b,strong {font-weight: normal;font-family: 'OpenSans-Bold',sans-serif;}
 	position: relative;
 	padding: 67px 0 20px;
 	text-align: left;
+	p {
+		margin-bottom: 8px;
+	}
 	&:before {
 		content:'\0054';
 		font-size: 28px;
@@ -1410,10 +1454,11 @@ html.mm-opened .hamburger-inner::before {
 	line-height: 50px;
 	color: #c4c4c4;
 	.lg {
+		display: block;
 		font-size: 138px;
-		line-height: 50px;
+		line-height: 140px;
 		color: $th;
-		font-family: 'Arial',sans-serif;
+		// font-family: 'Arial',sans-serif;
 		.gr {
 			color: #c4c4c4;
 		}
@@ -1479,6 +1524,7 @@ html.mm-opened .hamburger-inner::before {
 	max-width: 100%;
 	margin: 0 auto;
 }
+.col {max-width: 100%;}
 .product-list {padding-top: 13px;}
 .product-category {
 	margin-bottom: 45px;
@@ -1777,14 +1823,14 @@ html.mm-opened .hamburger-inner::before {
 	margin-bottom: 10px;display: inline-block;vertical-align: bottom;}
 .contact-page {
 	position: relative;
-	.breadcrumbs {
-		position: absolute;
-		z-index: 15;
-		top: 0;
-		right: 0;
-		left: 0;
-		background: rgba(255,255,255,0.8);
-	}
+	// .breadcrumbs {
+	// 	position: absolute;
+	// 	z-index: 15;
+	// 	top: 0;
+	// 	right: 0;
+	// 	left: 0;
+	// 	background: rgba(255,255,255,0.8);
+	// }
 	.contact-map {
 		margin: 0;
 	}
@@ -1793,7 +1839,7 @@ html.mm-opened .hamburger-inner::before {
 		margin-top: -175px;
 	}
 	#map {
-		height: 640px;
+		height: 600px;
 	}
 }
 .write-us {
@@ -2065,7 +2111,7 @@ html.mm-opened .hamburger-inner::before {
 .feed-news {
 	width: 635px;
 	max-width: 100%;
-	margin-top: 5px;
+	margin-top: 9px;
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
@@ -2169,6 +2215,8 @@ html.mm-opened .hamburger-inner::before {
 }
 .about-banner {
 	position: relative;
+	max-width: 100%;
+	overflow: hidden;
 	img {width: 100%;}
 }
 .about-banner .bann-logo {
@@ -2286,6 +2334,7 @@ html.mm-opened .hamburger-inner::before {
 	width: 25%;
 	padding: 0 15px;
 	text-align: center;
+	img {margin: 0 auto;}
 	span {
 		display: block;
 		margin-top: 15px;
@@ -2336,6 +2385,13 @@ html.mm-opened .hamburger-inner::before {
 		bottom: 0;
 		left: 0;
 		margin: auto;
+	}
+}
+.product-specification {
+	overflow-x: auto;
+	overflow-y:hidden;
+	table {
+		min-width: 600px;
 	}
 }
 .product-img-list {
@@ -2665,6 +2721,14 @@ html.mm-opened .hamburger-inner::before {
 	}
 }
 @media screen and (max-width: 1300px) {
+	.service-banner .breadcrumbs {position: static;}
+	.service-banner .breadcrumbs ul li a,
+	.service-banner .breadcrumbs ul li a:hover, .service-banner .breadcrumbs ul li span {color: $t;}
+	.foot-nav li {
+	    margin-left: 10px;
+	}
+	.filter-butt {font-size: 12px;}
+	.blue-form .btn {padding: 0 25px;}
 	.collaps-gen [class*='icon-'] {
 		margin-right: 15px;
 	}
@@ -2727,7 +2791,15 @@ html.mm-opened .hamburger-inner::before {
 	}
 }
 .materialboxed.active {max-width: none;max-height: none;}
+@media screen and (max-width: 1100px) {
+	.blue-form .btn {margin-top: 20px;}
+}
 @media screen and (max-width: 1023px) {
+	.feed {
+		text-align: center;
+		.align-left {text-align: center;}
+		.align-righ {text-align: center;}
+	}
 	.modal-content {padding: 40px 30px !important;}
 	.blue-form .btn {
 		margin-right: 29px;
@@ -2846,6 +2918,16 @@ html.mm-opened .hamburger-inner::before {
 	}
 }
 @media screen and (max-width: 767px) {
+	.tab-info {max-height: 500px;}
+	.found-section {
+		padding: 30px 0;
+	}
+	.found-block__right {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.product-specification table {min-width: 450px}
+	.footer .col {width: 100% !important;}
 	.feed-news input {padding-right: 105px;}
 	.feed-news button {right: 5px;font-size: 14px;}
 	.above-footer {height: 250px;}
@@ -2855,11 +2937,15 @@ html.mm-opened .hamburger-inner::before {
 	.contact-page #map {
 		height: 300px;
 	}
-	.contact-page .breadcrumbs {
-		position: static;
-		background:none;
+	// .contact-page .breadcrumbs {
+	// 	position: static;
+	// 	background:none;
+	// }
+	.contact-page .contact-box {margin-top: -15px;font-size: 14px;}
+	.contact-box ul li span {
+		width: 100% !important;
+		padding:0 !important;
 	}
-	.contact-page .contact-box {margin-top: -50px;}
 	.blue-form-field {
 		width: 100%;
 		max-width: 100%;
@@ -2894,9 +2980,9 @@ html.mm-opened .hamburger-inner::before {
 		font-size: 0;
 	}
 	.our-project .tabs .tab {
-		padding: 0 15px;
-		display: inline-block;
-		width: auto;
+		padding: 10px 15px;
+		display: block;
+		width: 100%;
 	}
 	.ceys-page.our-project .tabs .tab {
 		padding: 10px 15px !important;
@@ -2943,6 +3029,14 @@ html.mm-opened .hamburger-inner::before {
 	}
 }
 @media screen and (max-width: 599px) {
+	.contact-box {
+		position: static;
+		width: 100%;
+	}
+	.contact-map  {margin-top: 0;}
+	#map {height: 250px;}
+	.above-footer {height: 250px;}
+	.footer {margin-top: -250px;}
 	.service-accordion {padding-bottom: 30px;}
 	.service-acc-head {
 		font-size: 16px;
@@ -2955,9 +3049,7 @@ html.mm-opened .hamburger-inner::before {
 	}
 	.service-acc-body {padding: 20px;}
 	.service-it, .result-it {width: 100%;max-width: 100%;}
-	.service-banner .breadcrumbs {position: static;}
-	.service-banner .breadcrumbs ul li a,
-	.service-banner .breadcrumbs ul li a:hover, .service-banner .breadcrumbs ul li span {color: $t;}
+
 	// .pagination a, .pagination li span {
 	// 	width: 20px;
 	// 	height: 20px;
@@ -3000,8 +3092,9 @@ html.mm-opened .hamburger-inner::before {
 	.catalog-page .product-container .product-it {width: 100%;}
 	.section-blue, .garant-head, .about-service-head, .product-head {font-size: 24px;line-height: 28px;}
 	.logo.active {
-		width: 170px;
+		width: 150px;
 	}
+	.logo.active .hover-logo {left: 16px;}
 	.logo {height: 55px;}
 	.logo img {max-width: 120px;left: 25px;}
 	.caption-slide__left {
@@ -3019,7 +3112,7 @@ html.mm-opened .hamburger-inner::before {
 		margin-left: 10px;
 	}
 	.right-head-nav {
-		margin-right: 5px;
+		margin-right: 15px;
 		margin-top: 15px;
 	}
 	.mm-listview > li a, .mm-listview > li span {
