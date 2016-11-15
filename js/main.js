@@ -350,6 +350,10 @@ $(document).ready(function() {
         "title",""
 
      ],
+     "iconPanels": true,
+     navbar : {
+             'add'     : false
+       },
      "navbars": [
       {
          "position": "bottom",
